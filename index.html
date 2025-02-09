@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MR. Rover is Coming</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-carousel-3d@0.1.9/dist/vue-carousel-3d.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Kai Countdown</h1>
+        <div id="countdown"></div>
+
+        <button id="niniBtn">✨ NINI ✨</button>
+
+        <div id="niniContent" class="hidden">
+            <h2>💖 Moments with Kai 💖</h2>
+
+            <div id="app">
+                <carousel-3d :perspective="35" :border="2" :width="450" :height="300" :space="220" :clickable="true">
+                    <slide v-for="(image, index) in images" :index="index" :key="index">
+                        <img :src="image" alt="Kai Image">
+                    </slide>
+                </carousel-3d>
+            </div>
+
+            <video controls>
+                <source src="assets/kai-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="about">
+            <h2>💫 Who is Kai?!</h2>
+            <p>
+                HE IS ASIA'S FIRST LOVE, THE NATION CENTER,  
+                AND FACE OF KPOP, WORLD-CLASS PERFORMER,  
+                THE HUMAN GUCCI, OLYMPICS SECRET WEAPON,  
+                UNRIVALLED PERFORMER, IDOL OF IDOLS,  
+                THE DANCING KING.  
+            </p>
+        </div>
+
+        <div class="messages">
+            <h2>📝 Your Message for Kai 📝</h2>
+            <textarea id="messageInput" placeholder="Write your message here..."></textarea>
+            <button id="sendMessage">Send</button>
+            <div id="messagesList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
